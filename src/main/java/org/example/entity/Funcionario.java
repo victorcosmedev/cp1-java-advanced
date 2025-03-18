@@ -12,32 +12,23 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name="nome", nullable = false, length = 100)
     private String nome;
 
-    @Temporal(TemporalType.DATE)
-    private Calendar dataNascimento;
+    @Column(name="quant_horas_trabalhadas", nullable = false, precision = 5, scale = 3)
+    private double quantHorasTrabalhadas;
 
-    @Column(nullable = false, unique = true, length = 11)
-    private String cpf;
+    @Column(name="valor_hora_trabalhada", nullable = false, precision = 8, scale = 2)
+    private double valorHoraTrabalhada;
 
-    @Column(nullable = false)
-    private int idade;
-
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Genero genero;
-
-    public Funcionario(String nome, Calendar dataNascimento, String cpf, int idade, Genero genero) {
+    public Funcionario(long id, String nome, double quantHorasTrabalhadas, double valorHoraTrabalhada) {
+        this.id = id;
         this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-        this.idade = idade;
-        this.genero = genero;
+        this.quantHorasTrabalhadas = quantHorasTrabalhadas;
+        this.valorHoraTrabalhada = valorHoraTrabalhada;
     }
 
-    public Funcionario(){}
-
+    public Funcionario(){ }
 
     public long getId() {
         return id;
@@ -55,35 +46,29 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public Calendar getDataNascimento() {
-        return dataNascimento;
+    public double getQuantHorasTrabalhadas() {
+        return quantHorasTrabalhadas;
     }
 
-    public void setDataNascimento(Calendar dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setQuantHorasTrabalhadas(double quantHorasTrabalhadas) {
+        this.quantHorasTrabalhadas = quantHorasTrabalhadas;
     }
 
-    public String getCpf() {
-        return cpf;
+    public double getValorHoraTrabalhada() {
+        return valorHoraTrabalhada;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setValorHoraTrabalhada(double valorHoraTrabalhada) {
+        this.valorHoraTrabalhada = valorHoraTrabalhada;
     }
 
-    public int getIdade() {
-        return idade;
+    public double calcularSalario(){
+        return quantHorasTrabalhadas *  valorHoraTrabalhada;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
+    public void imprimirInformacao(){
+        System.out.println("Nome do funcionário: " + this.getNome());
+        System.out.println("Valor da hora trabalhada: " + this.getValorHoraTrabalhada());
+        System.out.println("Quantidade de horas trabalhadas: " + this.getQuantHorasTrabalhadas());
     }
 }
