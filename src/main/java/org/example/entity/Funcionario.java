@@ -6,7 +6,7 @@ import java.util.Calendar;
 @Entity
 @Table(name = "TB_FUNCIONARIO")
 @SequenceGenerator(name="cliente", sequenceName = "SQ_TB_CLIENTE", allocationSize = 1)
-public class Funcionario {
+public abstract class Funcionario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -21,8 +21,7 @@ public class Funcionario {
     @Column(name="valor_hora_trabalhada", nullable = false, precision = 8, scale = 2)
     private double valorHoraTrabalhada;
 
-    public Funcionario(long id, String nome, double quantHorasTrabalhadas, double valorHoraTrabalhada) {
-        this.id = id;
+    public Funcionario(String nome, double quantHorasTrabalhadas, double valorHoraTrabalhada) {
         this.nome = nome;
         this.quantHorasTrabalhadas = quantHorasTrabalhadas;
         this.valorHoraTrabalhada = valorHoraTrabalhada;
@@ -62,13 +61,7 @@ public class Funcionario {
         this.valorHoraTrabalhada = valorHoraTrabalhada;
     }
 
-    public double calcularSalario(){
-        return quantHorasTrabalhadas *  valorHoraTrabalhada;
-    }
+    abstract double calcularSalario();
 
-    public void imprimirInformacao(){
-        System.out.println("Nome do funcionário: " + this.getNome());
-        System.out.println("Valor da hora trabalhada: " + this.getValorHoraTrabalhada());
-        System.out.println("Quantidade de horas trabalhadas: " + this.getQuantHorasTrabalhadas());
-    }
+    public abstract void imprimirInformacao();
 }
