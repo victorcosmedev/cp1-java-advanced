@@ -13,13 +13,12 @@ public class FuncionarioSenior extends Funcionario {
         int multiplicadorBonus = 1;
         if(quantHorasTrabalhadas >= 15){
             multiplicadorBonus = (int) (quantHorasTrabalhadas / 15);
+            double percentualBonus = multiplicadorBonus * 0.05;
+            double salarioSemBonificacao = this.getQuantHorasTrabalhadas() * this.getValorHoraTrabalhada();
+
+            return salarioSemBonificacao + (salarioSemBonificacao * percentualBonus);
         }
-
-
-        double percentualBonus = multiplicadorBonus * 0.05;
-        double salarioSemBonificacao = this.getQuantHorasTrabalhadas() * this.getValorHoraTrabalhada();
-
-        return salarioSemBonificacao + (salarioSemBonificacao * percentualBonus);
+        return this.getQuantHorasTrabalhadas() * this.getValorHoraTrabalhada();
     }
 
     @Override
@@ -27,6 +26,6 @@ public class FuncionarioSenior extends Funcionario {
         System.out.println("Nome do funcionário sênior: " + this.getNome());
         System.out.println("Valor/hora: R$" + this.getValorHoraTrabalhada());
         System.out.println("Quantidade de horas trabalhadas: " + this.getQuantHorasTrabalhadas());
-        System.out.println("Salário: " + this.calcularSalario());
+        System.out.println("Salário: R$" + this.calcularSalario());
     }
 }
