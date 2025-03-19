@@ -1,9 +1,23 @@
 package org.example.entity;
 
+import org.example.anotation.Tabela;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TB_FUNCIONARIO_SENIOR")
+@Tabela(nome = "TB_FUNCIONARIO_SENIOR")
+@SequenceGenerator(name="seq_funcionario_senior", sequenceName = "SQ_TB_FUNCIONARIO_SENIOR", allocationSize = 1)
 public class FuncionarioSenior extends Funcionario {
 
     public FuncionarioSenior(String nome, double quantHorasTrabalhadas, double valorHoraTrabalhada) {
         super(nome, quantHorasTrabalhadas, valorHoraTrabalhada);
+    }
+
+    public FuncionarioSenior() {
+
     }
 
 

@@ -1,11 +1,15 @@
 package org.example.entity;
 
+import org.example.anotation.Tabela;
+
 import javax.persistence.*;
 import java.util.Calendar;
 
 @Entity
 @Table(name = "TB_FUNCIONARIO")
-@SequenceGenerator(name="cliente", sequenceName = "SQ_TB_CLIENTE", allocationSize = 1)
+@Inheritance(strategy = InheritanceType.JOINED)
+@Tabela(nome = "TB_FUNCIONARIO")
+@SequenceGenerator(name="seq_funcionario", sequenceName = "SQ_FUNCIONARIO", allocationSize = 1)
 public abstract class Funcionario {
 
     @Id

@@ -1,5 +1,15 @@
 package org.example.entity;
 
+import org.example.anotation.Tabela;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TB_FUNCIONARIO_JUNIOR")
+@Tabela(nome = "TB_FUNCIONARIO_JUNIOR")
+@SequenceGenerator(name="seq_funcionario_junior", sequenceName = "SQ_TB_FUNCIONARIO_JUNIOR", allocationSize = 1)
 public class FuncionarioJunior extends Funcionario{
 
     public FuncionarioJunior(String nome, double quantHorasTrabalhadas, double valorHoraTrabalhada) {
