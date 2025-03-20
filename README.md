@@ -57,6 +57,7 @@ Ao rodarmos o código, ele irá aparecer algumas informações, com a criação 
 ![image](https://github.com/user-attachments/assets/c174f3b3-de67-4c74-b0c1-4a45adf41302)
 
 Mas a Hibernate fornece outra saída:
+
 ![image](https://github.com/user-attachments/assets/c659bc5e-2b42-4bf3-82dc-81084abcf23b)
 ![image](https://github.com/user-attachments/assets/356256cd-08be-4062-9731-1163cfdd6cc7)
 ![image](https://github.com/user-attachments/assets/3944f309-81fe-46b7-97c3-80ff87f2d32f)
