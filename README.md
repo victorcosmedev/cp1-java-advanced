@@ -57,7 +57,7 @@ Ao rodarmos o código, ele irá aparecer algumas informações, com a criação 
 ![image](https://github.com/user-attachments/assets/c174f3b3-de67-4c74-b0c1-4a45adf41302)
 
 Mas a Hibernate fornece outra saída:
- ![image](https://github.com/user-attachments/assets/c659bc5e-2b42-4bf3-82dc-81084abcf23b)
+![image](https://github.com/user-attachments/assets/c659bc5e-2b42-4bf3-82dc-81084abcf23b)
 ![image](https://github.com/user-attachments/assets/356256cd-08be-4062-9731-1163cfdd6cc7)
 ![image](https://github.com/user-attachments/assets/3944f309-81fe-46b7-97c3-80ff87f2d32f)
 
@@ -70,9 +70,11 @@ como se fosse a primeira vez rodando.
 Ela chama a função `imprimirInformacao`, que retorna as informações do Funcionario já com o salário atualizado.
 
 Com o @Tabela ela imprime assim: 
+
 ![image](https://github.com/user-attachments/assets/0978ea02-62f4-4711-a806-905540cc8f8d)
 
 Com o Hibernate:
+
 ![image](https://github.com/user-attachments/assets/3055764c-4563-4c64-82e5-ed597d44b32d)
 
 Ele faz um join, por causa do `@Inheritance(strategy = InheritanceType.JOINED)` que colocamos na classe pai.
@@ -88,9 +90,11 @@ Vou fazer só com um funcionario porque se não vai ficar muito grande.
 ![image](https://github.com/user-attachments/assets/edb124c9-c09a-4d50-be3c-d6e43e13e415)
 
 Com o @Tabela:
+
 ![image](https://github.com/user-attachments/assets/2777438d-db6f-423b-bcfc-afb87981b069)
 
 Com o Hibernate:
+
 ![image](https://github.com/user-attachments/assets/e7b3c5b4-05f7-46b7-a0c7-c554d97ef6d6)
 
 
@@ -99,7 +103,9 @@ Com o Hibernate:
 ![image](https://github.com/user-attachments/assets/7a65ac59-df75-4935-a23d-2445c7f2f670)
 
 Com o @Tabela:
+
 ![image](https://github.com/user-attachments/assets/6b1c6614-d2f6-435d-ab17-c03f8a4dab11)
 
 Com o Hibernate:
+
 ![image](https://github.com/user-attachments/assets/c1bcd35f-2bcd-42b1-a123-1679f53a504d)
