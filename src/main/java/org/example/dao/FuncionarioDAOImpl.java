@@ -4,9 +4,7 @@ import org.example.anotation.Tabela;
 import org.example.entity.Funcionario;
 import org.example.exception.CommitException;
 import org.example.exception.IDException;
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
 
 public class FuncionarioDAOImpl implements FuncionarioDAO {
@@ -58,6 +56,12 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
         System.out.println("SELECT * FROM" + anotacao.nome()+" id = " +id);
         return funcionario;
+    }
+
+    @Override
+    public List<Funcionario> buscarTodosFuncionarios() {
+        return em.createQuery("SELECT f FROM Funcionario f", Funcionario.class)
+                .getResultList();
     }
 
 
