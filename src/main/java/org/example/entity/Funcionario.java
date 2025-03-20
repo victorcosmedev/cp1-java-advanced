@@ -65,7 +65,7 @@ public abstract class Funcionario {
         this.valorHoraTrabalhada = valorHoraTrabalhada;
     }
 
-    abstract double calcularSalario();
+    public abstract double calcularSalario();
 
     public abstract void imprimirInformacao();
 }

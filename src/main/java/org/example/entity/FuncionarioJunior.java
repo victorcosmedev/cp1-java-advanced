@@ -20,7 +20,7 @@ public class FuncionarioJunior extends Funcionario{
     }
 
     @Override
-    double calcularSalario() {
+    public double calcularSalario() {
         double quantHorasTrabalhadas = this.getQuantHorasTrabalhadas();
         int multiplicadorBonus = 1;
         if(quantHorasTrabalhadas >= 20){
@@ -39,5 +39,6 @@ public class FuncionarioJunior extends Funcionario{
         System.out.println("Valor/hora: R$" + this.getValorHoraTrabalhada());
         System.out.println("Quantidade de horas trabalhadas: " + this.getQuantHorasTrabalhadas());
         System.out.println("Salário: R$" + this.calcularSalario());
+        System.out.println("==========================================");
     }
 }
