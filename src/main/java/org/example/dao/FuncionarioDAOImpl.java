@@ -43,7 +43,7 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
     public void remover(long id) throws IDException {
         Funcionario funcionario = bucarPorID(id);
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
-        System.out.println("DELETE FROM " + anotacao.nome()+" WHERE ID = = " +id);
+        System.out.println("DELETE FROM " + anotacao.nome()+" WHERE ID = " +id);
         em.remove(funcionario);
     }
 
@@ -54,7 +54,7 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
             throw new IDException("Funcionario não encontrado");
         }
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
-        System.out.println("SELECT * FROM" + anotacao.nome()+" id = " +id);
+        System.out.println("SELECT * FROM " + anotacao.nome()+" id = " +id);
         return funcionario;
     }
 

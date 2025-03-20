@@ -3,7 +3,6 @@ package org.example.entity;
 import org.example.anotation.Tabela;
 
 import javax.persistence.*;
-import java.util.Calendar;
 
 @Entity
 @Table(name = "TB_FUNCIONARIO")
