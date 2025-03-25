@@ -13,7 +13,8 @@ Este projeto tem como objetivo desenvolver um sistema em **Java** para gerenciar
 </div>
 
 ## Informações
-Antes de realmente começarmos, preciso passar algumas informações. Ao criarmos a classe `Funcionario`, também criamos o **`SequenceGenerator`** com o **`sequenceName = "SQ_FUNCIONARIO"`**. Caso essa sequência já exista no banco Oracle, podem ocorrer alguns erros durante os testes, especificamente nas operações de **`ViewDAODelete`**, **`ViewDAOBuscarPorID`** e **`ViewDAOAtualizar`**.
+Na execução do código, há uma ordem que recomendamos fazer, que é executar primeiro o arquivo ViewDAOCadastro para popular o banco. Feito isso, os demais testes poderão ser realizados sem problemas, uma vez que haverá uma amostra de dados presente.
+Além disso, as credenciais disponíveis no arquivo da entrega direcionam para um login que está preparado para realização dos testes. 
 
 Para evitar esses erros, recomendo que altere o nome da sequência para algo como **`SQ_FUNCIONARIO_XTL`**. Com isso, uma nova sequência será gerada e os erros serão evitados.
 ## 🚀 Começando
