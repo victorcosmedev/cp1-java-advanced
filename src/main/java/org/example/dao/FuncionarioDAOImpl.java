@@ -20,8 +20,9 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
     public void cadastrar(Funcionario funcionario) {
         em.persist(funcionario);
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
-        System.out.println("INSERTO INTO " + anotacao.nome()+ " VALUES "+ "("+funcionario.getNome()+","+funcionario.getQuantHorasTrabalhadas()+","+funcionario.getValorHoraTrabalhada()+")");
-
+        System.out.println("=========================================================================================");
+        System.out.println("INSERT INTO " + anotacao.nome()+ " VALUES "+ "("+funcionario.getNome()+","+funcionario.getQuantHorasTrabalhadas()+","+funcionario.getValorHoraTrabalhada()+")");
+        System.out.println("=========================================================================================");
     }
 
     @Override
@@ -35,15 +36,19 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
         funcionarioExistente.setValorHoraTrabalhada(funcionario.getValorHoraTrabalhada());
         em.merge(funcionarioExistente);
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
+        System.out.println("=========================================================================================");
         System.out.println("UPDATE " + anotacao.nome()+" SET NOME =  "+funcionario.getNome()+", quantHorasTrabalhadas "+funcionario.getQuantHorasTrabalhadas()+
                 ", valorHoraTrabalhada = "+ funcionario.getValorHoraTrabalhada()+ "WHERE id = "+ id);
+        System.out.println("=========================================================================================");
     }
 
     @Override
     public void remover(long id) throws IDException {
         Funcionario funcionario = bucarPorID(id);
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
+        System.out.println("=========================================================================================");
         System.out.println("DELETE FROM " + anotacao.nome()+" WHERE ID = " +id);
+        System.out.println("=========================================================================================");
         em.remove(funcionario);
     }
 
@@ -54,7 +59,9 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
             throw new IDException("Funcionario não encontrado");
         }
         Tabela anotacao = funcionario.getClass().getAnnotation(Tabela.class);
+        System.out.println("=========================================================================================");
         System.out.println("SELECT * FROM " + anotacao.nome()+" id = " +id);
+        System.out.println("=========================================================================================");
         return funcionario;
     }
 

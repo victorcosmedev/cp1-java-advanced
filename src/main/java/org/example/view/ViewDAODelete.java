@@ -16,7 +16,7 @@ public class ViewDAODelete {
         FuncionarioDAOImpl dao = new FuncionarioDAOImpl(em);
 
         try{
-            dao.remover(4L);
+            dao.remover(21L);
             dao.commit();
             System.out.println("Funcionario Deletado!");
         } catch (IDException | CommitException e) {
